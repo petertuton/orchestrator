@@ -5,7 +5,9 @@
 local.settings.json
 
 # Azurite files
-azurite*
+  __blobstorage__
+  __azurite_db_blob__*
+  __azurite_db_table__*
 
 # Blob storage directory
 _blobstorage_/
