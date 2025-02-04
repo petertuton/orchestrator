@@ -1,0 +1,15 @@
+# Ignore Azurite files
+azurite*
+_blobstorage_
+
+# Ignore other common files and directories
+.git
+.gitignore
+.vscode
+bin
+obj
+*.user
+*.suo
+*.csproj.user
+*.csproj.suo
+*.log
