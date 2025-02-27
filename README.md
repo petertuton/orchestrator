@@ -16,10 +16,12 @@ This project contains an Azure Function that processes Azure Event Grid events a
 ### Using Azure Portal
 
 1. Navigate to your Azure Function App in the Azure Portal.
-2. Go to the "Configuration" section under "Settings".
-3. Click on "New application setting".
-4. Enter `SimulatorUrlPrefix` as the name and http://<container-apps-name-for-httpserver>/<post-route> as the value.
-5. Click "OK" and then "Save" to apply the changes.
+2. Go to the "Environment variables" section under "Settings".
+3. Click on "+ Add".
+4. Enter `SimulatorUrlPrefix` as the name and http://\<container-apps-name-for-httpserver\>/ as the value. Click "Apply"
+5. Enter `SimulationId` along with the uuid of the simulation. Click "Apply".
+6. Enter `SimulationSchema` along with the JSON for the schema. Click "Apply".
+7. Click "Apply" to apply all the changes.
 
 For more detailed instructions, you can refer to the official documentation: [Configure app settings for Azure Functions.](https://learn.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings?tabs=azure-portal%2Cto-premium)
 
@@ -29,7 +31,7 @@ For local development, you can set environment variables in the `local.settings.
 
 1. Open the `local.settings.json` file.
 2. Add the `SimulatorUrlPrefix` environment variable under the `Values` section.
-3. Enter the name of the Azure Container Apps app and the appropriate POST route. 
+3. Enter the URL of the Azure Container Apps app. 
 4. Save the file.
 
 ```json
@@ -38,7 +40,7 @@ For local development, you can set environment variables in the `local.settings.
     "Values": {
         "AzureWebJobsStorage": "UseDevelopmentStorage=true",
         "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
-        "SimulatorUrlPrefix": "http://<container-apps-name-for-httpserver>/<post-route>"
+        "SimulatorUrlPrefix": "http://<container-apps-name-for-httpserver>"
     }
 }
 ```
