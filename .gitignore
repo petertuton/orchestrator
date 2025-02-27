@@ -4,13 +4,13 @@
 # Azure Functions localsettings file
 local.settings.json
 
-# Azurite files
-  __blobstorage__
-  __azurite_db_blob__*
-  __azurite_db_table__*
+# Requests tests
+requests.http
 
-# Blob storage directory
-_blobstorage_/
+# Azurite files
+__azurite_db_blob__.json
+__azurite_db_blob_extent__.json
+__blobstorage__/
 
 # User-specific files
 *.suo
